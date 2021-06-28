@@ -5,6 +5,8 @@ package com.solutio.microservicePersistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,16 +18,16 @@ import javax.persistence.Table;
 @Table
 public class Tweet {
 
-	@Id
-	@Column	
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Column	(nullable = false)
 	private int id;
-	@Column
+	@Column (nullable = true)
 	private String user;
-	@Column
+	@Column (nullable = true)
 	private String text;
-	@Column
+	@Column (nullable = true)
 	private String location;
-	@Column
+	@Column (nullable = true)
 	private boolean validation;
 	
 	/**
